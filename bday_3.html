@@ -5,58 +5,79 @@
   <title>Darshan's Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       padding: 20px;
-      background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
+      background: linear-gradient(to top left, #fff0f5, #ffe4ec);
       font-family: 'Nunito', sans-serif;
       color: #6a1b4d;
+      overflow-x: hidden;
     }
 
     h1 {
       text-align: center;
       font-family: 'Great Vibes', cursive;
       color: #d81b60;
-      font-size: 48px;
-      margin-bottom: 30px;
+      font-size: 52px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px #ffc0cb;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 15px 25px;
+      border: 2px dotted #ff99bb;
+      border-radius: 14px;
+      background-color: #fff9fc;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(255, 192, 203, 0.3);
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: relative;
     }
 
-    .gallery img {
+    .photo-frame {
+      background: #fff;
+      border: 10px solid #ffc9dd;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.05);
+      box-shadow: 0 16px 40px rgba(255, 182, 193, 0.6);
+    }
+
+    .photo-frame img {
       width: 100%;
-      height: 220px;
+      height: 360px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: transform 0.3s ease;
+      display: block;
     }
 
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
-    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
       z-index: 1000;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
     }
@@ -64,28 +85,63 @@
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
     }
 
-    .close {
+    .lightbox .close {
       position: absolute;
       top: 20px;
       right: 30px;
-      color: #fff;
       font-size: 32px;
+      color: white;
       cursor: pointer;
       font-weight: bold;
     }
 
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 36px;
-      }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 8s infinite ease-in-out;
+      opacity: 0.7;
+      z-index: 0;
+    }
 
-      .gallery img {
-        height: 180px;
-      }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float {
+      0%   { transform: translateY(0) rotate(45deg); opacity: 0.6; }
+      50%  { transform: translateY(-100px) scale(1.3) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-200px) scale(1) rotate(45deg); opacity: 0; }
+    }
+
+    .footer-decor {
+      text-align: center;
+      font-size: 32px;
+      margin: 60px 0 20px;
+      opacity: 0.8;
+      color: #e91e63;
+    }
+
+    @media (max-width: 600px) {
+      .photo-frame { width: 90%; }
+      .photo-frame img { height: 260px; }
+      h1 { font-size: 38px; }
+      .intro { font-size: 16px; }
     }
   </style>
 </head>
@@ -93,19 +149,20 @@
 
   <h1>Darshan's Moments 💖</h1>
 
-  <div class="gallery">
-    <img src="d13.jpg" alt="Photo 1">
-    <img src="d24.jpg" alt="Photo 2">
-    <img src="d11.jpeg" alt="Photo 3">
-    <img src="d21.jpg" alt="Photo 4">
-    <img src="d22.jpeg" alt="Photo 5">
-    <img src="d23.jpg" alt="Photo 6">
-    <img src="d10.jpg" alt="Photo 7">
-    <img src="d9.jpg" alt="Photo 8">
-    <img src="d8.jpg" alt="Photo 9">
-    <img src="d5.jpg" alt="Photo 10">
-    <img src="d3.jpg" alt="Photo 11">
-    <img src="d25.jpg" alt="Photo 12">
+  <div class="intro">
+    Here's a little collection of memories that bring smiles, laughter, and warmth to my heart.  
+    Every photo is a piece of joy captured forever. 🌸💫
+  </div>
+
+  <div class="gallery" id="gallery">
+    <div class="photo-frame"><img src="d13.jpg" alt="Photo 1"></div>
+    <div class="photo-frame"><img src="d11.jpeg" alt="Photo 2"></div>
+    <div class="photo-frame"><img src="d21.jpg" alt="Photo 3"></div>
+    <div class="photo-frame"><img src="d22.jpeg" alt="Photo 4"></div>
+    <div class="photo-frame"><img src="d10.jpg" alt="Photo 5"></div>
+    <div class="photo-frame"><img src="d9.jpg" alt="Photo 6"></div>
+    <div class="photo-frame"><img src="d8.jpg" alt="Photo 7"></div>
+    <div class="photo-frame"><img src="d5.jpg" alt="Photo 8"></div>
   </div>
 
   <!-- Lightbox -->
@@ -114,8 +171,23 @@
     <img id="lightbox-img" src="">
   </div>
 
+  <!-- Bottom hearts and bouquets -->
+  <div class="footer-decor">
+    💖 💖 💖 💖 💖
+  </div>
+
   <script>
-    const galleryImages = document.querySelectorAll('.gallery img');
+    const gallery = document.getElementById('gallery');
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.top = Math.random() * 100 + 50 + 'px';
+      heart.style.animationDelay = (Math.random() * 8) + 's';
+      gallery.appendChild(heart);
+    }
+
+    const galleryImages = document.querySelectorAll('.photo-frame img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
@@ -139,4 +211,5 @@
 
 </body>
 </html>
+
 
