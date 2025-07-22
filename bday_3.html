@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Darshan's Journey | 2005–2025</title>
+  <title>Darshan's Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -11,220 +11,133 @@
 
     body {
       margin: 0;
-      padding: 40px 20px;
+      padding: 20px;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
       font-family: 'Nunito', sans-serif;
-      background: linear-gradient(to bottom, #ffe0f0, #ffdce6);
       color: #6a1b4d;
     }
 
     h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
       text-align: center;
+      font-family: 'Great Vibes', cursive;
       color: #d81b60;
-      margin-bottom: 40px;
+      font-size: 48px;
+      margin-bottom: 30px;
     }
 
-    .timeline {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
-    .card {
-      background: #fff0f8;
-      border: 2px solid #f8bbd0;
-      border-radius: 15px;
-      padding: 12px;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .gallery img:hover {
+      transform: scale(1.03);
     }
 
-    .card img {
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
       width: 100%;
-      height: 140px;
-      object-fit: cover;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
       border-radius: 10px;
-      margin-bottom: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
 
-    .card .year {
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
       font-weight: bold;
-      color: #ec407a;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: #6a1b4d;
-      margin: 0;
     }
 
     @media (max-width: 500px) {
       h1 {
         font-size: 36px;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <h1>20 Years of Darshan 💞</h1>
-
-  <div class="timeline">
-    <!-- Year cards -->
-    <div class="card"><div class="year">2005</div><img src="https://via.placeholder.com/300x200?text=2005" alt="Darshan 2005"/><p>You were born 🌸</p></div>
-    <div class="card"><div class="year">2006</div><img src="https://via.placeholder.com/300x200?text=2006" alt="Darshan 2006"/><p>Your first smile 💖</p></div>
-    <div class="card"><div class="year">2007</div><img src="https://via.placeholder.com/300x200?text=2007" alt="Darshan 2007"/><p>Tiny steps, big joy 🐾</p></div>
-    <div class="card"><div class="year">2008</div><img src="https://via.placeholder.com/300x200?text=2008" alt="Darshan 2008"/><p>The world saw your sparkle ✨</p></div>
-    <div class="card"><div class="year">2009</div><img src="https://via.placeholder.com/300x200?text=2009" alt="Darshan 2009"/><p>Always exploring 🌍</p></div>
-    <div class="card"><div class="year">2010</div><img src="https://via.placeholder.com/300x200?text=2010" alt="Darshan 2010"/><p>Your giggles were magic 💫</p></div>
-    <div class="card"><div class="year">2011</div><img src="https://via.placeholder.com/300x200?text=2011" alt="Darshan 2011"/><p>First day of school! 🎒</p></div>
-    <div class="card"><div class="year">2012</div><img src="https://via.placeholder.com/300x200?text=2012" alt="Darshan 2012"/><p>That cheeky smile 😊</p></div>
-    <div class="card"><div class="year">2013</div><img src="https://via.placeholder.com/300x200?text=2013" alt="Darshan 2013"/><p>Sunshine in human form 🌞</p></div>
-    <div class="card"><div class="year">2014</div><img src="https://via.placeholder.com/300x200?text=2014" alt="Darshan 2014"/><p>Adventures everywhere 🌈</p></div>
-    <div class="card"><div class="year">2015</div><img src="https://via.placeholder.com/300x200?text=2015" alt="Darshan 2015"/><p>Grew up so fast 💕</p></div>
-    <div class="card"><div class="year">2016</div><img src="https://via.placeholder.com/300x200?text=2016" alt="Darshan 2016"/><p>Your smile lit the room 💡</p></div>
-    <div class="card"><div class="year">2017</div><img src="https://via.placeholder.com/300x200?text=2017" alt="Darshan 2017"/><p>Strong, smart & sweet 💗</p></div>
-    <div class="card"><div class="year">2018</div><img src="dar14.jpg" alt="Darshan 2018"/><p>Growing beautifully 🌹</p></div>
-    <div class="card"><div class="year">2019</div><img src="https://via.placeholder.com/300x200?text=2019" alt="Darshan 2019"/><p>More memories, more love 💭</p></div>
-    <div class="card"><div class="year">2020</div><img src="d21.jpg" alt="Darshan 2020"/><p>You stayed strong 💪</p></div>
-    <div class="card"><div class="year">2021</div><img src="d20.jpg" alt="Darshan 2021"/><p>You shined through it all ✨</p></div>
-    <div class="card"><div class="year">2022</div><img src="d50.jpg" alt="Darshan 2022"/><p>Kind heart, bright soul 💫</p></div>
-    <div class="card"><div class="year">2023</div><img src="d23.jpg" alt="Darshan 2023"/><p>Every year, more lovable 💝</p></div>
-    <div class="card"><div class="year">2024</div><img src="d24.jpg" alt="Darshan 2024"/><p>What a beautiful soul 🌟</p></div>
-    <div class="card"><div class="year">2025</div><img src="d25.jpg" alt="Darshan 2025"/><p>You’re still my everything 💞</p></div>
-  </div>
-
-  <!-- Button to letter page -->
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="bday_4.html" class="btn" style="background: #f06292; color: white; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-size: 18px;">
-      💌 Read Your Letter
-    </a>
-  </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Darshan's Journey | 2005–2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: 'Nunito', sans-serif;
-      background: linear-gradient(to bottom, #ffe0f0, #ffdce6);
-      color: #6a1b4d;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      text-align: center;
-      color: #d81b60;
-      margin-bottom: 40px;
-    }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: #fff0f8;
-      border: 2px solid #f8bbd0;
-      border-radius: 15px;
-      padding: 12px;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .card .year {
-      font-weight: bold;
-      color: #ec407a;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: #6a1b4d;
-      margin: 0;
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 36px;
+      .gallery img {
+        height: 180px;
       }
     }
   </style>
 </head>
 <body>
 
-  <h1>20 Years of Darshan 💞</h1>
+  <h1>Darshan's Moments 💖</h1>
 
-  <div class="timeline">
-    <!-- Year cards -->
-    <div class="card"><div class="year">2005</div><img src="https://via.placeholder.com/300x200?text=2005" alt="Darshan 2005"/><p>You were born 🌸</p></div>
-    <div class="card"><div class="year">2006</div><img src="https://via.placeholder.com/300x200?text=2006" alt="Darshan 2006"/><p>Your first smile 💖</p></div>
-    <div class="card"><div class="year">2007</div><img src="https://via.placeholder.com/300x200?text=2007" alt="Darshan 2007"/><p>Tiny steps, big joy 🐾</p></div>
-    <div class="card"><div class="year">2008</div><img src="https://via.placeholder.com/300x200?text=2008" alt="Darshan 2008"/><p>The world saw your sparkle ✨</p></div>
-    <div class="card"><div class="year">2009</div><img src="https://via.placeholder.com/300x200?text=2009" alt="Darshan 2009"/><p>Always exploring 🌍</p></div>
-    <div class="card"><div class="year">2010</div><img src="https://via.placeholder.com/300x200?text=2010" alt="Darshan 2010"/><p>Your giggles were magic 💫</p></div>
-    <div class="card"><div class="year">2011</div><img src="https://via.placeholder.com/300x200?text=2011" alt="Darshan 2011"/><p>First day of school! 🎒</p></div>
-    <div class="card"><div class="year">2012</div><img src="https://via.placeholder.com/300x200?text=2012" alt="Darshan 2012"/><p>That cheeky smile 😊</p></div>
-    <div class="card"><div class="year">2013</div><img src="https://via.placeholder.com/300x200?text=2013" alt="Darshan 2013"/><p>Sunshine in human form 🌞</p></div>
-    <div class="card"><div class="year">2014</div><img src="https://via.placeholder.com/300x200?text=2014" alt="Darshan 2014"/><p>Adventures everywhere 🌈</p></div>
-    <div class="card"><div class="year">2015</div><img src="https://via.placeholder.com/300x200?text=2015" alt="Darshan 2015"/><p>Grew up so fast 💕</p></div>
-    <div class="card"><div class="year">2016</div><img src="https://via.placeholder.com/300x200?text=2016" alt="Darshan 2016"/><p>Your smile lit the room 💡</p></div>
-    <div class="card"><div class="year">2017</div><img src="https://via.placeholder.com/300x200?text=2017" alt="Darshan 2017"/><p>Strong, smart & sweet 💗</p></div>
-    <div class="card"><div class="year">2018</div><img src="dar14.jpg" alt="Darshan 2018"/><p>Growing beautifully 🌹</p></div>
-    <div class="card"><div class="year">2019</div><img src="https://via.placeholder.com/300x200?text=2019" alt="Darshan 2019"/><p>More memories, more love 💭</p></div>
-    <div class="card"><div class="year">2020</div><img src="d21.jpg" alt="Darshan 2020"/><p>You stayed strong 💪</p></div>
-    <div class="card"><div class="year">2021</div><img src="d20.jpg" alt="Darshan 2021"/><p>You shined through it all ✨</p></div>
-    <div class="card"><div class="year">2022</div><img src="d50.jpg" alt="Darshan 2022"/><p>Kind heart, bright soul 💫</p></div>
-    <div class="card"><div class="year">2023</div><img src="d23.jpg" alt="Darshan 2023"/><p>Every year, more lovable 💝</p></div>
-    <div class="card"><div class="year">2024</div><img src="d24.jpg" alt="Darshan 2024"/><p>What a beautiful soul 🌟</p></div>
-    <div class="card"><div class="year">2025</div><img src="d25.jpg" alt="Darshan 2025"/><p>You’re still my everything 💞</p></div>
+  <div class="gallery">
+    <img src="images/dar1.jpg" alt="Photo 1">
+    <img src="images/dar2.jpg" alt="Photo 2">
+    <img src="images/dar3.jpg" alt="Photo 3">
+    <img src="images/dar4.jpg" alt="Photo 4">
+    <img src="images/dar5.jpg" alt="Photo 5">
+    <img src="images/dar6.jpg" alt="Photo 6">
+    <img src="images/dar7.jpg" alt="Photo 7">
+    <img src="images/dar8.jpg" alt="Photo 8">
+    <img src="images/dar9.jpg" alt="Photo 9">
+    <img src="images/dar10.jpg" alt="Photo 10">
   </div>
 
-  <!-- Button to letter page -->
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="bday_4.html" class="btn" style="background: #f06292; color: white; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-size: 18px;">
-      💌 Read Your Letter
-    </a>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="">
   </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    // Optional: close lightbox when clicking outside image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.className === 'close') {
+        closeLightbox();
+      }
+    });
+  </script>
 
 </body>
 </html>
