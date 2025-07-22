@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Love Timeline</title>
+  <title>Our Love Timeline</title> 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -54,7 +54,6 @@
       padding: 20px;
       text-align: center;
       font-size: 18px;
-      font-style: italic;
       color: #b30059;
       line-height: 1.7;
       opacity: 0;
@@ -68,6 +67,7 @@
     .line {
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      margin-bottom: 10px;
     }
 
     .line.show {
@@ -103,63 +103,62 @@
 </head>
 <body>
 
-  <h1>Our Love Timeline 💖</h1>
+<h1>Our Love Timeline 💖</h1>
 
-  <!-- Section 1 -->
-  <div class="section even">
-    <div class="section-title">First Glance ✨</div>
-    <div class="photo" onclick="startLyrics1()">
-      <video id="video1" playsinline>
-        <source src="darshan1.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="lyrics" id="lyrics1">
-      <div class="heart">❤️</div>
-      <div class="line" id="v1l1">डूबे तो यूँ जैसे हो पार</div>
-      <div class="line" id="v1l2">होना था प्यार</div>
-      <div class="line" id="v1l3">हुआ मेरे यार</div>
-      <div class="line" id="v1l4">होना था प्यार</div>
-      <div class="heart">❤️</div>
-    </div>
+<!-- Section 1 -->
+<div class="section even">
+  <div class="section-title">First Glance ✨</div>
+  <div class="photo" onclick="startLyrics1()">
+    <video id="video1" playsinline>
+      <source src="darshan1.mp4" type="video/mp4">
+    </video>
   </div>
-
-  <!-- Section 2 -->
-  <div class="section">
-    <div class="section-title">With You Always 🌸</div>
-    <div class="photo" onclick="startLyrics2()">
-      <video id="video2" playsinline>
-        <source src="darshan2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="lyrics" id="lyrics2">
-      <div class="heart">💖</div>
-      <div class="line" id="v2l1">तू है तो दिल धड़कता है</div>
-      <div class="line" id="v2l2">तू है तो साँस आती है</div>
-      <div class="line" id="v2l3">तू ना हो तो घर घर नहीं लगता</div>
-      <div class="line" id="v2l4">तू है तो डर नहीं लगता</div>
-      <div class="heart">💖</div>
-    </div>
+  <div class="lyrics" id="lyrics1">
+    <div class="heart">❤️</div>
+    <div class="line" id="v1l1">डूबे तो यूँ जैसे हो पार</div>
+    <div class="line" id="v1l2">होना था प्यार</div>
+    <div class="line" id="v1l3">हुआ मेरे यार</div>
+    <div class="heart">❤️</div>
   </div>
+</div>
 
-  <!-- Section 3 -->
-  <div class="section even">
-    <div class="section-title">You Complete Me 💫</div>
-    <div class="photo" onclick="startLyrics3()">
-      <video id="video3" playsinline>
-        <source src="darshan3.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="lyrics" id="lyrics3">
-      <div class="heart">🌹</div>
-      <div class="line" id="v3l1">तू हौसला है</div>
-      <div class="line" id="v3l2">तू है इरादा</div>
-      <div class="line" id="v3l3">आधी मैं तुझमें</div>
-      <div class="line" id="v3l4">मुझमें तू आधा</div>
-      <div class="heart">🌹</div>
-    </div>
+<!-- Section 2 -->
+<div class="section">
+  <div class="section-title">With You Always 🌸</div>
+  <div class="photo" onclick="startLyrics2()">
+    <video id="video2" playsinline>
+      <source src="darshan2.mp4" type="video/mp4">
+    </video>
   </div>
+  <div class="lyrics" id="lyrics2">
+    <div class="heart">💖</div>
+    <div class="line" id="v2l1">तू है तो दिल धड़कता है</div>
+    <div class="line" id="v2l2">तू है तो सांस आती है</div>
+    <div class="line" id="v2l3">तू ना हो तो घर घर नहीं लगता</div>
+    <div class="line" id="v2l4">तू है तो डर नहीं लगता</div>
+    <div class="heart">💖</div>
+  </div>
+</div>
 
-  <!-- Section 4 -->
+<!-- Section 3 -->
+<div class="section even">
+  <div class="section-title">You Complete Me 💫</div>
+  <div class="photo" onclick="startLyrics3()">
+    <video id="video3" playsinline>
+      <source src="darshan3.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="lyrics" id="lyrics3">
+    <div class="heart">🌹</div>
+    <div class="line" id="v3l1">तू हौसला है</div>
+    <div class="line" id="v3l2">तू है इरादा</div>
+    <div class="line" id="v3l3">आधी मैं तुझमें</div>
+    <div class="line" id="v3l4">मुझमें तू आधा</div>
+    <div class="heart">🌹</div>
+  </div>
+</div>
+
+<!-- Section 4 -->
   <div class="section">
     <div class="section-title">Walk With Me 🥰</div>
     <div class="photo" onclick="startLyrics4()">
@@ -195,44 +194,47 @@
     </div>
   </div>
 
-  <!-- SCRIPT -->
-  <script>
-    function playLyrics(videoId, lyricsId, lineIds, timings) {
-      const video = document.getElementById(videoId);
-      const lyricsBox = document.getElementById(lyricsId);
-      const lines = lineIds.map(id => document.getElementById(id));
 
-      if (video.paused) video.play();
+<!-- SCRIPT -->
+<script>
+  function playLyrics(videoId, lyricsId, lineIds, timings) {
+    const video = document.getElementById(videoId);
+    const lyricsBox = document.getElementById(lyricsId);
+    const lines = lineIds.map(id => document.getElementById(id));
 
-      lyricsBox.classList.add('visible');
-      lines.forEach(line => line.classList.remove('show'));
-      lineIds.forEach((id, i) => {
-        setTimeout(() => {
-          document.getElementById(id).classList.add('show');
-        }, timings[i]);
-      });
-    }
+    video.play();
+    lyricsBox.classList.add('visible');
+    lines.forEach(line => line.classList.remove('show'));
 
-    function startLyrics1() {
-      playLyrics('video1', 'lyrics1', ['v1l1','v1l2','v1l3','v1l4'], [1000, 4000, 7000, 10000]);
-    }
+    lineIds.forEach((_, index) => {
+      setTimeout(() => {
+        lines[index].classList.add('show');
+      }, timings[index]);
+    });
+  }
 
-    function startLyrics2() {
-      playLyrics('video2', 'lyrics2', ['v2l1','v2l2','v2l3','v2l4'], [1500, 4500, 8000, 11500]);
-    }
+  function startLyrics1() {
+    playLyrics('video1', 'lyrics1', ['v1l1','v1l2','v1l3'], [1500, 8500 ,12000]);
+  }
 
-    function startLyrics3() {
-      playLyrics('video3', 'lyrics3', ['v3l1','v3l2','v3l3','v3l4'], [1200, 4000, 7500, 11000]);
-    }
+  function startLyrics2() {
+    playLyrics('video2', 'lyrics2', ['v2l1','v2l2','v2l3','v2l4'], [1500, 4500, 7500, 10500]);
+  }
 
-    function startLyrics4() {
-      playLyrics('video4', 'lyrics4', ['v4l1','v4l2','v4l3','v4l4'], [1000, 4000, 7000, 10000]);
-    }
+  function startLyrics3() {
+    playLyrics('video3', 'lyrics3', ['v3l1','v3l2','v3l3','v3l4'], [2500, 6000, 9000, 12000]);
+  }
 
-    function startLyrics5() {
-      playLyrics('video5', 'lyrics5', ['v5l1','v5l2','v5l3','v5l4'], [1000, 4000, 7000, 10000]);
-    }
-  </script>
+  function startLyrics4() {
+    playLyrics('video4', 'lyrics4', ['v4l1','v4l2','v4l3','v4l4'], [2000, 7000, 10000, 13000]);
+  }
+
+  function startLyrics5() {
+    playLyrics('video5', 'lyrics5', ['v5l1','v5l2','v5l3','v5l4'], [1800, 4800, 7800, 11000]);
+  }
+
+  
+</script>
 
 </body>
 </html>
