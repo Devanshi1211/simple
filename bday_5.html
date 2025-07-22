@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Love Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: #ffe6f0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Nunito', sans-serif;
     }
 
     h1 {
@@ -37,9 +38,10 @@
       flex: 1;
       max-width: 400px;
       padding: 20px;
+      cursor: pointer;
     }
 
-    .photo img {
+    .photo video {
       width: 100%;
       height: auto;
       border-radius: 20px;
@@ -51,10 +53,25 @@
       max-width: 400px;
       padding: 20px;
       text-align: center;
-      font-size: 16px;
+      font-size: 18px;
       font-style: italic;
       color: #b30059;
-      line-height: 1.5;
+      line-height: 1.7;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .lyrics.visible {
+      opacity: 1;
+    }
+
+    .line {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .line.show {
+      opacity: 1;
     }
 
     .heart {
@@ -77,6 +94,7 @@
         flex-direction: column !important;
         text-align: center;
       }
+
       .photo, .lyrics {
         max-width: 90%;
       }
@@ -85,148 +103,136 @@
 </head>
 <body>
 
-  <h1>Our Love Story 💖</h1>
+  <h1>Our Love Timeline 💖</h1>
 
   <!-- Section 1 -->
-  <div class="section">
+  <div class="section even">
     <div class="section-title">First Glance ✨</div>
-    <div class="photo">
-      <img src="d33.jpg" alt="Photo 1">
+    <div class="photo" onclick="startLyrics1()">
+      <video id="video1" playsinline>
+        <source src="darshan1.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="lyrics">
+    <div class="lyrics" id="lyrics1">
       <div class="heart">❤️</div>
-      When I see your smile, I forget the world.<br>
-      Everything starts and ends with you.
+      <div class="line" id="v1l1">डूबे तो यूँ जैसे हो पार</div>
+      <div class="line" id="v1l2">होना था प्यार</div>
+      <div class="line" id="v1l3">हुआ मेरे यार</div>
+      <div class="line" id="v1l4">होना था प्यार</div>
       <div class="heart">❤️</div>
     </div>
   </div>
 
   <!-- Section 2 -->
-  <div class="section even">
-    <div class="section-title">Hand in Hand 🤝</div>
-    <div class="photo">
-      <img src="d28.jpg" alt="Photo 2">
+  <div class="section">
+    <div class="section-title">With You Always 🌸</div>
+    <div class="photo" onclick="startLyrics2()">
+      <video id="video2" playsinline>
+        <source src="darshan2.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="lyrics">
-      <div class="heart">💕</div>
-      You hold my heart like no one else ever could.<br>
-      Every day with you is a blessing.
-      <div class="heart">💕</div>
+    <div class="lyrics" id="lyrics2">
+      <div class="heart">💖</div>
+      <div class="line" id="v2l1">तू है तो दिल धड़कता है</div>
+      <div class="line" id="v2l2">तू है तो साँस आती है</div>
+      <div class="line" id="v2l3">तू ना हो तो घर घर नहीं लगता</div>
+      <div class="line" id="v2l4">तू है तो डर नहीं लगता</div>
+      <div class="heart">💖</div>
     </div>
   </div>
 
   <!-- Section 3 -->
-  <div class="section">
-    <div class="section-title">Your Soft Touch 🌼</div>
-    <div class="photo">
-      <img src="d29.jpg" alt="Photo 3">
+  <div class="section even">
+    <div class="section-title">You Complete Me 💫</div>
+    <div class="photo" onclick="startLyrics3()">
+      <video id="video3" playsinline>
+        <source src="darshan3.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="lyrics">
-      <div class="heart">💖</div>
-      Your touch calms my soul,<br>
-      Your love makes me whole.
-      <div class="heart">💖</div>
+    <div class="lyrics" id="lyrics3">
+      <div class="heart">🌹</div>
+      <div class="line" id="v3l1">तू हौसला है</div>
+      <div class="line" id="v3l2">तू है इरादा</div>
+      <div class="line" id="v3l3">आधी मैं तुझमें</div>
+      <div class="line" id="v3l4">मुझमें तू आधा</div>
+      <div class="heart">🌹</div>
     </div>
   </div>
 
   <!-- Section 4 -->
-  <div class="section even">
-    <div class="section-title">Sweet Hello, Hard Goodbye 🌸</div>
-    <div class="photo">
-      <img src="dar5.jpg" alt="Photo 4">
+  <div class="section">
+    <div class="section-title">Walk With Me 🥰</div>
+    <div class="photo" onclick="startLyrics4()">
+      <video id="video4" playsinline>
+        <source src="darshan4.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="lyrics">
-      <div class="heart">🌸</div>
-      You’re my favorite hello,<br>
-      And the hardest goodbye.
-      <div class="heart">🌸</div>
+    <div class="lyrics" id="lyrics4">
+      <div class="heart">💕</div>
+      <div class="line" id="v4l1">बिन कुछ कहे, बिन कुछ सुने, हाथों में हाथ लिए</div>
+      <div class="line" id="v4l2">चार क़दम, बस चार क़दम</div>
+      <div class="line" id="v4l3">चल दो ना</div>
+      <div class="line" id="v4l4">साथ मेरे</div>
+      <div class="heart">💕</div>
     </div>
   </div>
 
   <!-- Section 5 -->
-  <div class="section">
-    <div class="section-title">Every Day, Every Moment 💘</div>
-    <div class="photo">
-      <img src="dar12.jpg" alt="Photo 5">
-    </div>
-    <div class="lyrics">
-      <div class="heart">💘</div>
-      I fall in love with you<br>
-      Every single day.
-      <div class="heart">💘</div>
-    </div>
-  </div>
-
-  <!-- Section 6 -->
   <div class="section even">
-    <div class="section-title">Forever Begins Here 🕊️</div>
-    <div class="photo">
-      <img src="dar1.jpg" alt="Photo 6">
+    <div class="section-title">Endless Journey 🌌</div>
+    <div class="photo" onclick="startLyrics5()">
+      <video id="video5" playsinline>
+        <source src="darshan5.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="lyrics">
-      <div class="heart">❤️</div>
-      You are my today,<br>
-      And all of my tomorrows.
-      <div class="heart">❤️</div>
-    </div>
-  </div>
-
-  <!-- Section 7 -->
-  <div class="section">
-    <div class="section-title">Better Together 🫶</div>
-    <div class="photo">
-      <img src="dar29.jpg" alt="Photo 7">
-    </div>
-    <div class="lyrics">
-      <div class="heart">💕</div>
-      We’re better together,<br>
-      Always and forever.
-      <div class="heart">💕</div>
+    <div class="lyrics" id="lyrics5">
+      <div class="heart">🌠</div>
+      <div class="line" id="v5l1">ओ नीले गगन के दीवाने</div>
+      <div class="line" id="v5l2">तू प्यार ना मेरा पहचान</div>
+      <div class="line" id="v5l3">मैं तब तक साथ चलूं तेरे</div>
+      <div class="line" id="v5l4">जब तक ना कहे तू मैं हारा</div>
+      <div class="heart">🌠</div>
     </div>
   </div>
 
-  <!-- Section 8 -->
-  <div class="section even">
-    <div class="section-title">Our Wild Adventure ✨</div>
-    <div class="photo">
-      <img src="d35.jpg" alt="Photo 8">
-    </div>
-    <div class="lyrics">
-      <div class="heart">💖</div>
-      Loving you is my favorite adventure.<br>
-      Let’s never stop.
-      <div class="heart">💖</div>
-    </div>
-  </div>
+  <!-- SCRIPT -->
+  <script>
+    function playLyrics(videoId, lyricsId, lineIds, timings) {
+      const video = document.getElementById(videoId);
+      const lyricsBox = document.getElementById(lyricsId);
+      const lines = lineIds.map(id => document.getElementById(id));
 
-  <!-- Section 9 -->
-  <div class="section">
-    <div class="section-title">Just Us, Just Love 🌹</div>
-    <div class="photo">
-      <img src="dar2.jpg" alt="Photo 9">
-    </div>
-    <div class="lyrics">
-      <div class="heart">🌹</div>
-      You and me, we’re magic.<br>
-      Pure and real.
-      <div class="heart">🌹</div>
-    </div>
-  </div>
+      if (video.paused) video.play();
 
-  <!-- Section 10 -->
-  <div class="section even">
-    <div class="section-title">Forever My Fairy Tale 💞</div>
-    <div class="photo">
-      <img src="dar3.jpg" alt="Photo 10">
-    </div>
-    <div class="lyrics">
-      <div class="heart">💞</div>
-      With you, every moment is a fairy tale.<br>
-      I love you endlessly.
-      <div class="heart">💞</div>
-    </div>
-  </div>
+      lyricsBox.classList.add('visible');
+      lines.forEach(line => line.classList.remove('show'));
+      lineIds.forEach((id, i) => {
+        setTimeout(() => {
+          document.getElementById(id).classList.add('show');
+        }, timings[i]);
+      });
+    }
+
+    function startLyrics1() {
+      playLyrics('video1', 'lyrics1', ['v1l1','v1l2','v1l3','v1l4'], [1000, 4000, 7000, 10000]);
+    }
+
+    function startLyrics2() {
+      playLyrics('video2', 'lyrics2', ['v2l1','v2l2','v2l3','v2l4'], [1500, 4500, 8000, 11500]);
+    }
+
+    function startLyrics3() {
+      playLyrics('video3', 'lyrics3', ['v3l1','v3l2','v3l3','v3l4'], [1200, 4000, 7500, 11000]);
+    }
+
+    function startLyrics4() {
+      playLyrics('video4', 'lyrics4', ['v4l1','v4l2','v4l3','v4l4'], [1000, 4000, 7000, 10000]);
+    }
+
+    function startLyrics5() {
+      playLyrics('video5', 'lyrics5', ['v5l1','v5l2','v5l3','v5l4'], [1000, 4000, 7000, 10000]);
+    }
+  </script>
 
 </body>
 </html>
-
