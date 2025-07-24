@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Love Timeline</title> 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -16,9 +16,11 @@
     h1 {
       text-align: center;
       padding: 30px 10px 10px;
-      font-size: 36px;
+      font-size: 40px;
       color: #b30059;
       background-color: #fff0f8;
+      font-family: 'Great Vibes', cursive;
+      animation: fadeInDown 1.5s ease-in-out;
     }
 
     .section {
@@ -39,6 +41,11 @@
       max-width: 400px;
       padding: 20px;
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.03);
     }
 
     .photo video {
@@ -58,6 +65,7 @@
       line-height: 1.7;
       opacity: 0;
       transition: opacity 1s ease;
+      font-family: 'Great Vibes', cursive;
     }
 
     .lyrics.visible {
@@ -66,18 +74,21 @@
 
     .line {
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
       margin-bottom: 10px;
     }
 
     .line.show {
       opacity: 1;
+      transform: translateY(0);
     }
 
     .heart {
       color: #ff4da6;
       font-size: 22px;
       margin: 10px 0;
+      animation: pulse 1.5s infinite;
     }
 
     .section-title {
@@ -87,6 +98,8 @@
       margin-bottom: 10px;
       font-size: 20px;
       color: #b30059;
+      font-weight: 600;
+      font-family: 'Nunito', sans-serif;
     }
 
     @media (max-width: 768px) {
@@ -99,11 +112,37 @@
         max-width: 90%;
       }
     }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 <body>
 
 <h1>Our Love Timeline 💖</h1>
+
+<!-- Your section content remains same below -->
 
 <!-- Section 1 -->
 <div class="section even">
@@ -159,41 +198,40 @@
 </div>
 
 <!-- Section 4 -->
-  <div class="section">
-    <div class="section-title">Walk With Me 🥰</div>
-    <div class="photo" onclick="startLyrics4()">
-      <video id="video4" playsinline>
-        <source src="darshan4.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="lyrics" id="lyrics4">
-      <div class="heart">💕</div>
-      <div class="line" id="v4l1">बिन कुछ कहे, बिन कुछ सुने, हाथों में हाथ लिए</div>
-      <div class="line" id="v4l2">चार क़दम, बस चार क़दम</div>
-      <div class="line" id="v4l3">चल दो ना</div>
-      <div class="line" id="v4l4">साथ मेरे</div>
-      <div class="heart">💕</div>
-    </div>
+<div class="section">
+  <div class="section-title">Walk With Me 🥰</div>
+  <div class="photo" onclick="startLyrics4()">
+    <video id="video4" playsinline>
+      <source src="darshan4.mp4" type="video/mp4">
+    </video>
   </div>
-
-  <!-- Section 5 -->
-  <div class="section even">
-    <div class="section-title">Endless Journey 🌌</div>
-    <div class="photo" onclick="startLyrics5()">
-      <video id="video5" playsinline>
-        <source src="darshan5.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="lyrics" id="lyrics5">
-      <div class="heart">🌠</div>
-      <div class="line" id="v5l1">ओ नीले गगन के दीवाने</div>
-      <div class="line" id="v5l2">तू प्यार ना मेरा पहचान</div>
-      <div class="line" id="v5l3">मैं तब तक साथ चलूं तेरे</div>
-      <div class="line" id="v5l4">जब तक ना कहे तू मैं हारा</div>
-      <div class="heart">🌠</div>
-    </div>
+  <div class="lyrics" id="lyrics4">
+    <div class="heart">💕</div>
+    <div class="line" id="v4l1">बिन कुछ कहे, बिन कुछ सुने, हाथों में हाथ लिए</div>
+    <div class="line" id="v4l2">चार क़दम, बस चार क़दम</div>
+    <div class="line" id="v4l3">चल दो ना</div>
+    <div class="line" id="v4l4">साथ मेरे</div>
+    <div class="heart">💕</div>
   </div>
+</div>
 
+<!-- Section 5 -->
+<div class="section even">
+  <div class="section-title">Endless Journey 🌌</div>
+  <div class="photo" onclick="startLyrics5()">
+    <video id="video5" playsinline>
+      <source src="darshan5.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="lyrics" id="lyrics5">
+    <div class="heart">🌠</div>
+    <div class="line" id="v5l1">ओ नीले गगन के दीवाने</div>
+    <div class="line" id="v5l2">तू प्यार ना मेरा पहचान</div>
+    <div class="line" id="v5l3">मैं तब तक साथ चलूं तेरे</div>
+    <div class="line" id="v5l4">जब तक ना कहे तू मैं हारा</div>
+    <div class="heart">🌠</div>
+  </div>
+</div>
 
 <!-- SCRIPT -->
 <script>
@@ -232,9 +270,8 @@
   function startLyrics5() {
     playLyrics('video5', 'lyrics5', ['v5l1','v5l2','v5l3','v5l4'], [1800, 4800, 7800, 11000]);
   }
-
-  
 </script>
 
 </body>
 </html>
+
